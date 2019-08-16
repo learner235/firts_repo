@@ -1,4 +1,4 @@
-package com.department.model;
+package com.entity;
 import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -24,4 +24,4 @@ public class Department {
 	public void setDept_name(String dept_name) {
 		this.dept_name = dept_name;
 	}
-}
+} 

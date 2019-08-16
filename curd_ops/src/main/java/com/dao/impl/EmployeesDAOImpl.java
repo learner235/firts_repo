@@ -1,9 +1,9 @@
-package com.employees.dao.impl;
+package com.dao.impl;
 
-import com.employee.dao.EmployeesDao;
-import com.employee.model.Employees;
+import com.dao.EmployeesDAO;
+import com.entity.Employees;
 
-public class EmployeesDaoImpl implements EmployeesDao{
+public class EmployeesDAOImpl implements EmployeesDAO{
 
 	@Override
 	public void save(Employees emp) {
@@ -15,5 +15,4 @@ public class EmployeesDaoImpl implements EmployeesDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

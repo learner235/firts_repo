@@ -1,9 +1,9 @@
-package com.department.dao.impl;
+package com.dao.impl;
 
-import com.department.dao.DepartmentDao;
-import com.department.model.Department;
+import com.dao.DepartmentDAO;
+import com.entity.Department;
 
-public class DepartmentDaoImpl  implements DepartmentDao{
+public class DepartmentDAOImpl  implements DepartmentDAO{
 
 	@Override
 	public void save(Department dept) {
