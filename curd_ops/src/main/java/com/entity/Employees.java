@@ -18,7 +18,7 @@ public class Employees {
 	private int emp_no;
 	
 	@Column(name="birth_date", nullable = false)
-	private Date birth_date;
+	private String birth_date;
 	
 	@Column(name="first_name" , nullable = false)
 	private String first_name;
@@ -30,7 +30,7 @@ public class Employees {
 	private String gender;
 	
 	@Column(name="hire_date" , nullable = false)
-	private Date hire_date;
+	private String hire_date;
 	
 	public int getEmp_no() {
 		return emp_no;
@@ -40,11 +40,11 @@ public class Employees {
 		this.emp_no = emp_no;
 	}
 	
-	public Date getBirth_date() {
+	public String getBirth_date() {
 		return birth_date;
 	}
 	
-	public void setBirth_date(Date birth_date) {
+	public void setBirth_date(String birth_date) {
 		this.birth_date = birth_date;
 	}
 	
@@ -72,11 +72,11 @@ public class Employees {
 		this.gender = gender;
 	}
 	
-	public Date getHire_date() {
+	public String getHire_date() {
 		return hire_date;
 	}
 	
-	public void setHire_date(Date hire_date) {
+	public void setHire_date(String hire_date) {
 		this.hire_date = hire_date;
 	}
 	
