@@ -2,10 +2,12 @@ package com.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -15,65 +17,49 @@ import javax.persistence.Table;
 @Table(name = "salaries")
 public class Salaries
 {
-	@EmbeddedId
-	private SalariesPK spk;
+	@Id
+	@Column(name="s_id")
+	private int s_id;
+	
+	@JoinColumn(name = "emp_no", unique = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    private Employees emp;
+	
+	@Column(name="salarey", nullable=false)
 	private int salary;
-	private String endDate;
 	
-	@OneToOne
-    @JoinColumn(name = "emp_no")
-	private Employees empNo;
+	@Column(name="from_date", nullable=false)
+	private String fromDate;
 	
-	public SalariesPK getSpk() {
-		return spk;
+	@Column(name="to_date", nullable=false)
+	private String toDate;
+
+	public Salaries() {
+		super();
 	}
-	public void setSpk(SalariesPK spk) {
-		this.spk = spk;
+
+	public int getS_id() {
+		return s_id;
 	}
+
+	public void setS_id(int s_id) {
+		this.s_id = s_id;
+	}
+
+	public Employees getEmp() {
+		return emp;
+	}
+
+	public void setEmp(Employees emp) {
+		this.emp = emp;
+	}
+
 	public int getSalary() {
 		return salary;
 	}
+
 	public void setSalary(int salary) {
 		this.salary = salary;
-	}
-	public String getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-	public Employees getEmpNo() {
-		return empNo;
-	}
-	public void setEmpNo(Employees empNo) {
-		this.empNo = empNo;
-	}	
-	
-}
-
-/*--------------------------  Composite Key Class -----------------------------------*/
-@Embeddable
-class SalariesPK implements Serializable
-{
-	@Column(name="emp_no", nullable=false)
-	protected int empNo;
-	
-	@Column(name="from_date", nullable=false)
-	protected String fromDate;
-
-	public SalariesPK() { }
-
-	public SalariesPK(int empNo, String fromDate) {
-		this.empNo = empNo;
-		this.fromDate = fromDate;
-	}
-
-	public int getEmpNo() {
-		return empNo;
-	}
-
-	public void setEmpNo(int empNo) {
-		this.empNo = empNo;
 	}
 
 	public String getFromDate() {
@@ -83,5 +69,17 @@ class SalariesPK implements Serializable
 	public void setFromDate(String fromDate) {
 		this.fromDate = fromDate;
 	}
+
+	public String getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(String toDate) {
+		this.toDate = toDate;
+	}
+	
+	
+	
 }
+
 
