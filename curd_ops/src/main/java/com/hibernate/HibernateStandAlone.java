@@ -24,7 +24,13 @@ public class HibernateStandAlone {
 		
 		for(Employees e: emps)
 		{
-			System.out.println("Details are "+e);
+			System.out.println("Details are "+e.getEmpNo());
+			System.out.println("Details are "+e.getFirstName());
+			System.out.println("Details are "+e.getLastName());
+			System.out.println("Details are "+e.getHireDate());
+			System.out.println("Details are "+e.getGender());
+			System.out.println("Details are "+e.getBirthDate());
+			System.out.println();
 		}
 		session.getTransaction().commit();
 		session.close();

@@ -17,6 +17,7 @@ public class EmployeesDAOImpl implements EmployeesDAO{
 	public void save(Employees emp) {
 		this.sessionFactory.getCurrentSession().save(emp);
 	}
+	/*
 
 	@Override
 	public Employees fetch(Employees emp) {
@@ -35,4 +36,6 @@ public class EmployeesDAOImpl implements EmployeesDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
+}
+*/
 }
