@@ -12,6 +12,8 @@
         <property name="show_sql">true</property>
         <property name="format_sql">false</property>
         <property name="hibernate.default_schem">user</property>
-        <mapping class="com.entity.Employees"/>
+        <mapping class="com.entity.Department"/>
+        <mapping class="com.entity.Employees" />
+		<mapping class="com.entity.Salaries" />
     </session-factory>
 </hibernate-configuration>

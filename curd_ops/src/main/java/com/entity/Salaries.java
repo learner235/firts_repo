@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -19,6 +21,7 @@ public class Salaries
 {
 	@Id
 	@Column(name="s_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int s_id;
 	
 	@JoinColumn(name = "emp_no", unique = true)
