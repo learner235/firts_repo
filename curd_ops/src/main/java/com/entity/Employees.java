@@ -1,83 +1,82 @@
 package com.entity;
 
-import java.sql.Date;
-import javax.persistence.Entity;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="employees")
+@Table(name = "employees", schema = "user")
 public class Employees {
-	
+
 	@Id
-	@Column(name="emp_no", nullable = false)
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int emp_no;
-	
-	@Column(name="birth_date", nullable = false)
-	private String birth_date;
-	
-	@Column(name="first_name" , nullable = false)
-	private String first_name;
-	
-	@Column(name="last_name" , nullable = false)
-	private String last_name;
-	
-	@Column(name="gender" , nullable = false)
+	@Column(name = "emp_no", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int empNo;
+
+	@Column(name = "birth_date", nullable = false)
+	private String birthDate;
+
+	@Column(name = "first_name", nullable = false)
+	private String firstName;
+
+	@Column(name = "last_name", nullable = false)
+	private String lastName;
+
+	@Column(name = "gender", nullable = false)
 	private String gender;
-	
-	@Column(name="hire_date" , nullable = false)
-	private String hire_date;
-	
-	public int getEmp_no() {
-		return emp_no;
+
+	@Column(name = "hire_date", nullable = false)
+	private String hireDate;
+
+	public int getEmpNo() {
+		return empNo;
 	}
-	
-	public void setEmp_no(int emp_no) {
-		this.emp_no = emp_no;
+
+	public void setEmpNo(int empNo) {
+		this.empNo = empNo;
 	}
-	
-	public String getBirth_date() {
-		return birth_date;
+
+	public String getBirthDate() {
+		return birthDate;
 	}
-	
-	public void setBirth_date(String birth_date) {
-		this.birth_date = birth_date;
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
-	
-	public String getFirst_name() {
-		return first_name;
+
+	public String getFirstName() {
+		return firstName;
 	}
-	
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	
-	public String getLast_name() {
-		return last_name;
+
+	public String getLastName() {
+		return lastName;
 	}
-	
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	
+
 	public String getGender() {
 		return gender;
 	}
-	
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
-	public String getHire_date() {
-		return hire_date;
+
+	public String getHireDate() {
+		return hireDate;
 	}
-	
-	public void setHire_date(String hire_date) {
-		this.hire_date = hire_date;
+
+	public void setHireDate(String hireDate) {
+		this.hireDate = hireDate;
 	}
-	
+
 }

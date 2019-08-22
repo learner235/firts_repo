@@ -10,16 +10,15 @@ public class HibernateStandAlone {
 	public static void main(String [] args)
 	{
 		Employees emp =new Employees();
-		emp.setEmp_no(334);
-		emp.setBirth_date("1995.1.1");
-		emp.setFirst_name("Oseen");
-		emp.setLast_name("gupta");
+		emp.setBirthDate("1995.1.1");
+		emp.setFirstName("Oseen");
+		emp.setLastName("gupta");
 		emp.setGender("F");
-		emp.setHire_date("2019.2.2");
+		emp.setHireDate("2019.2.2");
 		
-		Session session =HibenateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
-		session.persist(emp);
+		session.save(emp);
 		
 		List<Employees> emps = (List<Employees>)session.createQuery("from Employees").list();
 		
